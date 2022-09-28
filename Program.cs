@@ -3,6 +3,15 @@
 internal class Program
 {
     #region Değişkenler
+    //public enum Yon
+    //{
+    //    North,
+    //    East,             switch-case devreden çıkarmak için kullanılabilir, ++ ve -- operatörleri çalışıyor.
+    //    South,
+    //    West
+    //}
+    static int platoSagUstX;
+    static int platoSagUstY;
     static List<Rover> roverlar = new List<Rover>();
     static Rover rover;
     static int roverSayisi;
@@ -79,6 +88,9 @@ internal class Program
 
         girilenChar = girilenVeri.Split(' ');
 
+        platoSagUstX = Convert.ToInt32(girilenChar[0]);
+        platoSagUstY = Convert.ToInt32(girilenChar[1]);
+
         Console.WriteLine("Lütfen iniş yapan rover sayısını giriniz: ");
         roverSayisi = Convert.ToInt32(Console.ReadLine());
 
@@ -113,7 +125,6 @@ internal class Program
                         break;
                 }
             }
-
             roverlar.Add(rover);
         }
     }
@@ -121,6 +132,10 @@ internal class Program
     {
         foreach(Rover rover in roverlar)
         {
+            if (rover.KonumX > platoSagUstX || rover.KonumX < 0 || rover.KonumY > platoSagUstY || rover.KonumY < 0)
+            {
+                Console.WriteLine("Rover plato sınırları dışına çıktı!");
+            }
             Console.WriteLine(rover.KonumX + " " + rover.KonumY + " " + rover.Yon);
         }
     }

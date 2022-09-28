@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Program;
 
 namespace NasaProblemCase
 {
@@ -10,6 +11,6 @@ namespace NasaProblemCase
     {
         public int KonumX { get; set; }
         public int KonumY { get; set; }
-        public Char Yon { get; set; }  
+        public char Yon { get; set; }  
     }
 }
