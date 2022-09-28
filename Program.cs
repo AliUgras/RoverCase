@@ -14,6 +14,7 @@ internal class Program
     private static void Main(string[] args)
     {
         VeriIste();
+        VeriYaz();
     }
     #endregion
     #region Fonksiyonlar
