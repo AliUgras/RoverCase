@@ -81,7 +81,7 @@ internal class Program
                 break;
         }
     }
-    public static void VeriIste()
+    public static void VeriIste()  //Kullanıcıdan veriyi isteyip aldığımız verileri gerekli fonksiyonlara yönlendirerek istediğimiz sonuçları alabiliyoruz
     {
         Console.WriteLine("Lütfen platoya ait sağ üst nokta koordinatlarını giriniz: ");
         girilenVeri = Console.ReadLine();
@@ -98,7 +98,7 @@ internal class Program
         {
             Console.WriteLine("Lütfen " + (i + 1) + ". roverin iniş konum bilgilerini giriniz: ");
             girilenVeri = Console.ReadLine();
-            girilenChar = girilenVeri.Split(' ');
+            girilenChar = girilenVeri.Split(' '); //aldığımız stringi boşluklara göre charlara ayırmak için kullanılan fonksiyon
 
             rover = new Rover()
             {
@@ -109,7 +109,7 @@ internal class Program
 
             Console.WriteLine("Lütfen " + (i + 1) + ". roverin hareket komutlarını giriniz: ");
             girilenVeri = Console.ReadLine().ToUpper();
-            hareketKomutlari = girilenVeri.ToCharArray();
+            hareketKomutlari = girilenVeri.ToCharArray();//hareket komutunda boşluk olmadığından stringi direkt olarak char arraya dönüştürdüm
             foreach(char x in hareketKomutlari)
             {
                 switch (x)
