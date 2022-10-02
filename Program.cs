@@ -5,9 +5,7 @@ internal class Program
     #region Değişkenler
     static int platoSagUstX;
     static int platoSagUstY;
-    static List<Rover> roverlar = new List<Rover>();
     static Rover rover;
-    static int roverSayisi;
     static string girilenVeri;
     static string[] girilenChar;
     static char[] hareketKomutlari;
@@ -16,7 +14,6 @@ internal class Program
     private static void Main(string[] args)
     {
         VeriIste();
-        VeriYaz();
     }
     #endregion
     #region Fonksiyonlar
@@ -30,36 +27,27 @@ internal class Program
         platoSagUstX = Convert.ToInt32(girilenChar[0]);
         platoSagUstY = Convert.ToInt32(girilenChar[1]);
 
-        Console.WriteLine("Lütfen iniş yapan rover sayısını giriniz: ");
-        roverSayisi = Convert.ToInt32(Console.ReadLine());
-
-        for(int i=0; i < roverSayisi; i++)
+        do
         {
-            Console.WriteLine("Lütfen " + (i + 1) + ". roverin iniş konum bilgilerini giriniz: ");
+            Console.WriteLine("Lütfen roverin iniş konum bilgilerini giriniz: ");
             girilenVeri = Console.ReadLine();
             girilenChar = girilenVeri.Split(' '); //aldığımız stringi boşluklara göre charlara ayırmak için kullanılan fonksiyon
 
             rover = new Rover(Convert.ToInt32(girilenChar[0]), Convert.ToInt32(girilenChar[1]), char.Parse(girilenChar[2].ToUpper()));
 
-            Console.WriteLine("Lütfen " + (i + 1) + ". roverin hareket komutlarını giriniz: ");
+            Console.WriteLine("Lütfen roverin hareket komutlarını giriniz: ");
             girilenVeri = Console.ReadLine().ToUpper();
+
             hareketKomutlari = girilenVeri.ToCharArray();//hareket komutunda boşluk olmadığından stringi direkt olarak char arraya dönüştürdüm
 
             rover.HareketEttir(hareketKomutlari);  //hareket komutlarını char array olarak hareket edilmesini sağlayan fonksiyona yolladım
 
-            roverlar.Add(rover);
-        }
-    }
-    public static void VeriYaz()
-    {
-        foreach(Rover rover in roverlar)
-        {
             if (rover.KonumX > platoSagUstX || rover.KonumX < 0 || rover.KonumY > platoSagUstY || rover.KonumY < 0)
             {
                 Console.WriteLine("Rover plato sınırları dışına çıktı!");
             }
             Console.WriteLine(rover.KonumX + " " + rover.KonumY + " " + (rover.Yon.ToString()).ToCharArray()[0]); //roverlerin konum ve yön bilgilerini sırayla ekrana yazıyorum
-        }
+        } while (true);
     }
     #endregion
 }
