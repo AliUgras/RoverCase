@@ -15,8 +15,8 @@ namespace NasaProblemCase
 
         public Rover(int konumX, int konumY, char yon)
         {
-            KonumX = konumX;
-            KonumY = konumY;
+            this.KonumX = konumX;
+            this.KonumY = konumY;
             switch (yon)
             {
                 case 'N':

@@ -1,0 +1,15 @@
+C:\Users\Acer\source\repos\NasaProblemCase\bin\Debug\net6.0\NasaProblemCase.exe
+C:\Users\Acer\source\repos\NasaProblemCase\bin\Debug\net6.0\NasaProblemCase.deps.json
+C:\Users\Acer\source\repos\NasaProblemCase\bin\Debug\net6.0\NasaProblemCase.runtimeconfig.json
+C:\Users\Acer\source\repos\NasaProblemCase\bin\Debug\net6.0\NasaProblemCase.dll
+C:\Users\Acer\source\repos\NasaProblemCase\bin\Debug\net6.0\NasaProblemCase.pdb
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\NasaProblemCase.csproj.AssemblyReference.cache
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\NasaProblemCase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\NasaProblemCase.AssemblyInfoInputs.cache
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\NasaProblemCase.AssemblyInfo.cs
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\NasaProblemCase.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\NasaProblemCase.dll
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\refint\NasaProblemCase.dll
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\NasaProblemCase.pdb
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\NasaProblemCase.genruntimeconfig.cache
+C:\Users\Acer\source\repos\NasaProblemCase\obj\Debug\net6.0\ref\NasaProblemCase.dll
