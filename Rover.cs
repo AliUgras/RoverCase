@@ -78,6 +78,8 @@ namespace NasaProblemCase
                     case 'M':
                         this.MKomut();
                         break;
+                    default:
+                        break;
                 }
             }
         }

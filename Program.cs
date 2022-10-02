@@ -46,7 +46,7 @@ internal class Program
             {
                 Console.WriteLine("Rover plato sınırları dışına çıktı!");
             }
-            Console.WriteLine(rover.KonumX + " " + rover.KonumY + " " + (rover.Yon.ToString()).ToCharArray()[0]); //roverlerin konum ve yön bilgilerini sırayla ekrana yazıyorum
+            Console.WriteLine(rover.KonumX + " " + rover.KonumY + " " + (rover.Yon.ToString()).ToCharArray()[0]); //roverin konum ve yön bilgilerini sırayla ekrana yazıyorum
         } while (true);
     }
     #endregion
