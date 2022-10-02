@@ -3,13 +3,6 @@
 internal class Program
 {
     #region Değişkenler
-    //public enum Yon
-    //{
-    //    North,
-    //    East,             switch-case devreden çıkarmak için kullanılabilir, ++ ve -- operatörleri çalışıyor.
-    //    South,
-    //    West
-    //}
     static int platoSagUstX;
     static int platoSagUstY;
     static List<Rover> roverlar = new List<Rover>();
@@ -27,60 +20,6 @@ internal class Program
     }
     #endregion
     #region Fonksiyonlar
-    public static void RKomut(Rover rover)
-    {
-        switch (rover.Yon)
-        {
-            case 'N':
-                rover.Yon = 'E';
-                break;
-            case 'W':
-                rover.Yon = 'N';
-                break;
-            case 'E':
-                rover.Yon = 'S';
-                break;
-            case 'S':
-                rover.Yon = 'W';
-                break;
-        }
-    }
-    public static void LKomut(Rover rover)
-    {
-        switch (rover.Yon)
-        {
-            case 'N':
-                rover.Yon = 'W';
-                break;
-            case 'W':
-                rover.Yon = 'S';
-                break;
-            case 'E':
-                rover.Yon = 'N';
-                break;
-            case 'S':
-                rover.Yon = 'E';
-                break;
-        }
-    }
-    public static void MKomut(Rover rover)
-    {
-        switch (rover.Yon)
-        {
-            case 'N':
-                rover.KonumY++;
-                break;
-            case 'W':
-                rover.KonumX--;
-                break;
-            case 'E':
-                rover.KonumX++;
-                break;
-            case 'S':
-                rover.KonumY--;
-                break;
-        }
-    }
     public static void VeriIste()  //Kullanıcıdan veriyi isteyip aldığımız verileri gerekli fonksiyonlara yönlendirerek istediğimiz sonuçları alabiliyoruz
     {
         Console.WriteLine("Lütfen platoya ait sağ üst nokta koordinatlarını giriniz: ");
@@ -100,31 +39,14 @@ internal class Program
             girilenVeri = Console.ReadLine();
             girilenChar = girilenVeri.Split(' '); //aldığımız stringi boşluklara göre charlara ayırmak için kullanılan fonksiyon
 
-            rover = new Rover()
-            {
-                KonumX = Convert.ToInt32(girilenChar[0]),
-                KonumY = Convert.ToInt32(girilenChar[1]),
-                Yon = char.Parse(girilenChar[2].ToUpper())
-            };
+            rover = new Rover(Convert.ToInt32(girilenChar[0]), Convert.ToInt32(girilenChar[1]), char.Parse(girilenChar[2].ToUpper()));
 
             Console.WriteLine("Lütfen " + (i + 1) + ". roverin hareket komutlarını giriniz: ");
             girilenVeri = Console.ReadLine().ToUpper();
             hareketKomutlari = girilenVeri.ToCharArray();//hareket komutunda boşluk olmadığından stringi direkt olarak char arraya dönüştürdüm
-            foreach(char x in hareketKomutlari)
-            {
-                switch (x)
-                {
-                    case 'L':
-                        LKomut(rover);
-                        break;
-                    case 'R':
-                        RKomut(rover);
-                        break;
-                    case 'M':
-                        MKomut(rover);
-                        break;
-                }
-            }
+
+            rover.HareketEttir(hareketKomutlari);  //hareket komutlarını char array olarak hareket edilmesini sağlayan fonksiyona yolladım
+
             roverlar.Add(rover);
         }
     }
@@ -136,7 +58,7 @@ internal class Program
             {
                 Console.WriteLine("Rover plato sınırları dışına çıktı!");
             }
-            Console.WriteLine(rover.KonumX + " " + rover.KonumY + " " + rover.Yon);
+            Console.WriteLine(rover.KonumX + " " + rover.KonumY + " " + (rover.Yon.ToString()).ToCharArray()[0]); //roverlerin konum ve yön bilgilerini sırayla ekrana yazıyorum
         }
     }
     #endregion
